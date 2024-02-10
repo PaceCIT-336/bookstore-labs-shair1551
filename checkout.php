@@ -35,7 +35,9 @@ echo "<div class=\"row summary\"><div class=\"cell\">Total Price:</div><div clas
 // thank the user for their purchase
 
   echo "Thank you for buying from us!";
-
+  if ($price > 0) {
+    echo "Thank you for buying from us!!";
+  }
 
 // this clears the session and ensures the cart is emptied for future shopping
 session_start();
