@@ -18,7 +18,7 @@ $cart = explode('|', htmlentities($_POST['cart']));
 $cartItems = count($cart); // number of items in the cart
 $price = htmlentities($_POST['total']);
 $tax = 0.04 * $price;
-$tax += $price;
+$price += $tax;
 //calculate average price
 
 //print the information in table-like divs
