@@ -33,7 +33,9 @@ echo "<div class='row'><div class='cell'>Tax:</div><div class='cell'>$$tax</div>
 echo "<div class=\"row summary\"><div class=\"cell\">Total Price:</div><div class=\"cell\">$$price</div></div>";
 
 // thank the user for their purchase
-
+<?
+  echo "Thank you for buying from us!";
+?>
 
 // this clears the session and ensures the cart is emptied for future shopping
 session_start();
