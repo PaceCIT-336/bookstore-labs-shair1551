@@ -20,7 +20,7 @@ $price = htmlentities($_POST['total']);
 $tax = 0.04 * $price;
 $price += $tax;
 //calculate average price
-
+$avgPrice = $price / $cartItems;
 //print the information in table-like divs
 echo "<h2>Cart</h2><div class=\"table\"><div class=\"row header\"><div class=\"cell\">Title</div><div class=\"cell\">Price</div></div>";
 for ($i = 0; $i < count($cart); $i++) {
@@ -28,7 +28,7 @@ for ($i = 0; $i < count($cart); $i++) {
     echo "<div class=\"row\"><div class=\"cell\">$title</div><div class=\"cell\">$</div></div>";
 }
 // calculate tax and echo it in a new table row 
-echo "<div class=\"row\"><div class=\"cell\">$tax</div><div class=\"cell\">$</div></div>";
+echo "<div class='row'><div class='cell'>Tax:</div><div class='cell'>$$tax</div></div>";
 
 echo "<div class=\"row summary\"><div class=\"cell\">Total Price:</div><div class=\"cell\">$$price</div></div>";
 
