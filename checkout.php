@@ -28,7 +28,7 @@ for ($i = 0; $i < count($cart); $i++) {
     echo "<div class=\"row\"><div class=\"cell\">$title</div><div class=\"cell\">$</div></div>";
 }
 // calculate tax and echo it in a new table row 
-
+echo "<div class=\"row\"><div class=\"cell\">$tax</div><div class=\"cell\">$</div></div>";
 
 echo "<div class=\"row summary\"><div class=\"cell\">Total Price:</div><div class=\"cell\">$$price</div></div>";
 
