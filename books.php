@@ -22,5 +22,10 @@ $book3 = New Book("HTML & CSS 9th Ed", "Joe Casabona.", "Design and build webpag
 $book4 = New Book("American Heritage Dictionary", "", "The English Language", "assets/imgs/dictionary.jpg", "55");
 
 $books = array($book1, $book2, $book3, $book4);
-
+foreach ( $books as $x) {
+    echo "$x <br>";
+  }
 }
+
+
+?>
