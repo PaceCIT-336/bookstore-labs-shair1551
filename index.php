@@ -10,8 +10,12 @@
     include_once("cart.php"); ?>
 </head>
 
-<?php include("books.php") ?>
+<?php include("books.php") 
 
+$books = array($book1, $book2, $book3, $book4);
+foreach ( $books as $books) 
+    echo "$books <br>";
+    ?>
 <body>
     <header>
         <h1><a href="index.php">Rainy Bookstore</a></h1>
