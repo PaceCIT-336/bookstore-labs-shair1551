@@ -10,6 +10,8 @@
     include_once("cart.php"); ?>
 </head>
 
+<?php include("books.php") ?>
+
 <body>
     <header>
         <h1><a href="index.php">Rainy Bookstore</a></h1>
