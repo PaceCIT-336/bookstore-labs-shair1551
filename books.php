@@ -22,10 +22,6 @@ $book3 = New Book("HTML & CSS 9th Ed", "Joe Casabona.", "Design and build webpag
 $book4 = New Book("American Heritage Dictionary", "", "The English Language", "assets/imgs/dictionary.jpg", "55");
 
 
-
-
-
-
 require_once 'login.php';
 
 try
@@ -40,17 +36,28 @@ catch (PDOException $e)
 $query  = "SELECT * FROM bookstore";
 $result = $pdo->query($query);
 
-while ($row = $result->fetch())
-{
-  echo 'ID:   ' . htmlspecialchars($row['ID'])   . "<br>";
-  echo 'Title:    ' . htmlspecialchars($row['Title'])    . "<br>";
-  echo 'Author: ' . htmlspecialchars($row['Author']) . "<br>";
-  echo 'blurb:     ' . htmlspecialchars($row['blurb'])     . "<br>";
-  echo 'ImagePath:     ' . htmlspecialchars($row['Imagepath'])     . "<br><br>";
-  echo 'Price:     ' . htmlspecialchars($row['Price'])     . "<br><br>";
-}
 
+$BooksArray = []; 
 
+$sql = "SELECT id, title, author, description, image_path, price FROM bookstore";
+
+try {
+    $stmt = $pdo->query($sql);
+    if ($stmt->rowCount() > 0) {
+    
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            
+            $Id = htmlspecialchars($row['id'])."<br>";
+            $Title = htmlspecialchars($row['title'])."<br>";
+            $Author = htmlspecialchars($row['author'])."<br>";
+            $Description = htmlspecialchars($row['description'])."<br>";
+            $ImagePath = htmlspecialchars($row['image_path'])."<br>";
+            $Price = htmlspecialchars($row['price'])."<br>";
+          
+            $Book = Bookstore($Id, $Title, $Author, $Description, $ImagePath, $Price);
+            $BooksArray[$id] = $book;
+        }
+      }
 }
 
 
