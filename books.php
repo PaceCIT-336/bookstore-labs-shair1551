@@ -21,9 +21,40 @@ $book2 = New Book("Learning Python", "Mark Lutz.", "Powerful Object-Oriented Pro
 $book3 = New Book("HTML & CSS 9th Ed", "Joe Casabona.", "Design and build webpages", "assets/imgs/htmlcss.jpg", "35");
 $book4 = New Book("American Heritage Dictionary", "", "The English Language", "assets/imgs/dictionary.jpg", "55");
 
-$books = array($book1, $book2, $book3, $book4);
+
+
+
+
+
+require_once 'login.php';
+
+try
+{
+  $pdo = new PDO($attr, $user, $pass, $opts);
+}
+catch (PDOException $e)
+{
+  throw new PDOException($e->getMessage(), (int)$e->getCode());
+}
+
+$query  = "SELECT * FROM bookstore";
+$result = $pdo->query($query);
+
+while ($row = $result->fetch())
+{
+  echo 'ID:   ' . htmlspecialchars($row['ID'])   . "<br>";
+  echo 'Title:    ' . htmlspecialchars($row['Title'])    . "<br>";
+  echo 'Author: ' . htmlspecialchars($row['Author']) . "<br>";
+  echo 'blurb:     ' . htmlspecialchars($row['blurb'])     . "<br>";
+  echo 'ImagePath:     ' . htmlspecialchars($row['Imagepath'])     . "<br><br>";
+  echo 'Price:     ' . htmlspecialchars($row['Price'])     . "<br><br>";
+}
+
 
 }
+
+
+
 
 
 ?>
