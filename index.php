@@ -18,7 +18,7 @@ foreach ( $books as $books)
     ?>
 <body>
     <header>
-        
+    foreach ($books as $id => $value) {
     <aside id="cart">
         <img src="assets/imgs/cart.png">
         <p id="cartSummary">
@@ -32,6 +32,8 @@ foreach ( $books as $books)
         </form>
         <form id="clearform" name="clearform" action="" method="POST">
             <button id="clearCart" name="clear" value="clear">Clear Cart</button>
+            <br><a href=\"book_reviews.php?id=$id\"><button>See Reviews</button></a>
+    }
         </form>
     </aside>
     </main>
