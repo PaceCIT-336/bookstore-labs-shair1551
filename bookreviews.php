@@ -11,7 +11,30 @@
     include_once("cart.php");
     require_once("books.php"); ?>
 </head>
+<?php
+$stmt = $pdo->prepare("SELECT * FROM bookstore WHERE id=?");
+$stmt->execute([$id]); 
+$user = $stmt->fetch(); code
+?>
 
+<?php
+$id = $_GET['id']; 
+$stmt_title = $pdo->prepare("SELECT title FROM bookstore WHERE id = ?");
+$stmt_title->execute([$id]);
+$book_title = $stmt_title->fetchColumn();
+echo "<h3>Book Title: " . $book_title . "</h3>";
+$stmt = $pdo->prepare("SELECT rating, review FROM reviews WHERE BookID = ?");
+$stmt->execute([$id]);
+if ($stmt->rowCount() > 0) {
+    
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo "Rating: " . $row['Rating'] . "<br>";
+        echo "Review: " . $row['Review'] . "<br><br>";
+    }
+} else {
+    echo "No ratings or reviews are available for this book.";
+}
+?>
 <body>
     <header>
         <h1>Rainy Bookstore</h1>

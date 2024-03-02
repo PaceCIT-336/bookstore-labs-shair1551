@@ -18,7 +18,7 @@ foreach ( $books as $books)
     ?>
 <body>
     <header>
-    foreach ($books as $id => $value) {
+  foreach ($books as $id => $value) {
     <aside id="cart">
         <img src="assets/imgs/cart.png">
         <p id="cartSummary">
