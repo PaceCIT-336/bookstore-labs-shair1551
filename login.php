@@ -1,8 +1,8 @@
 <?php // login.php
   $host = 'localhost';    // Change as necessary
   $data = 'bookstore'; // Change as necessary
-  $user = 'webapp';         // Change as necessary
-  $pass = 'webapp1551';        // Change as necessary
+  $user = 'Webapp';         // Change as necessary
+  $pass = 'Webapp1551';        // Change as necessary
   $chrs = 'utf8mb4';
   $attr = "mysql:host=$host;dbname=$data;charset=$chrs";
   $opts =
